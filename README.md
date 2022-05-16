@@ -76,3 +76,32 @@
     }
 
     export  default  ColorBox;
+
+
+
+**Open UseReducerComponent**
+
+    import  React, { useReducer } from  "react";
+    import { HexColorPicker } from  "react-colorful";
+    import  ColorBox  from  "./ColorBox";
+    import { Colors, Action } from  "./ColorInterface";
+    
+    function  UseReducerComponent() {
+  
+	    return (
+	    
+	    )
+    }
+    
+    export  default  UseReducerComponent;
+
+
+**Lets set an initial state for the colors**
+
+    const  initialState:  Colors  = {
+	    color1: "#000",
+	    color2: "#000",
+	    color3: "#000",
+	    color4: "#000",
+    };
+

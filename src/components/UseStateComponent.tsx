@@ -3,10 +3,13 @@ import { HexColorPicker } from "react-colorful";
 import ColorBox from "./ColorBox";
 
 function UseStateComponent() {
-  const [color1, setColor1] = useState<string>("#000");
-  const [color2, setColor2] = useState<string>("#000");
-  const [color3, setColor3] = useState<string>("#000");
-  const [color4, setColor4] = useState<string>("#000");
+
+  console.log("Render UseStateCom")
+  // rerenders on each change
+  const [color1, setColor1] = useState<string>("#000000");
+  const [color2, setColor2] = useState<string>("#000000");
+  const [color3, setColor3] = useState<string>("#000000");
+  const [color4, setColor4] = useState<string>("#000000");
 
   const colors = [
     { title: "Color 1", color: color1, setter: setColor1 },
@@ -14,7 +17,8 @@ function UseStateComponent() {
     { title: "Color 3", color: color3, setter: setColor3 },
     { title: "Color 4", color: color4, setter: setColor4 },
   ];
-
+  
+  
   return (
     <div className="flex">
       {colors.map((color,index) => (

@@ -19,11 +19,14 @@ function reducer(state: Colors, action: Action) {
 }
 
 function UseReducerComponent() {
+
+  console.log("Render UseReducerCom")
+
   const initialState: Colors = {
-    color1: "#000",
-    color2: "#000",
-    color3: "#000",
-    color4: "#000",
+    color1: "#000000",
+    color2: "#000000",
+    color3: "#000000",
+    color4: "#000000",
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);

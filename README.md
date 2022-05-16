@@ -139,18 +139,18 @@
 
 **Lets build output from map**
 
-  return (
-    <div className="flex">
-      {colors.map((color) => (
-        <div className="flex-color-box" key={color.setter}>
-          <ColorBox color={color.color} />
-          <HexColorPicker
-            color={color.color}
-            onChange={(e) => {
-              dispatch({ type: color.setter, value: e });
-            }}
-          />
+    return (
+        <div className="flex">
+        {colors.map((color) => (
+            <div className="flex-color-box" key={color.setter}>
+            <ColorBox color={color.color} />
+            <HexColorPicker
+                color={color.color}
+                onChange={(e) => {
+                dispatch({ type: color.setter, value: e });
+                }}
+            />
+            </div>
+        ))}
         </div>
-      ))}
-    </div>
-  );
+    );

@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+# React useState, useReducer tutorial
+## Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Lets use Create React App to create our react project utilizing typescript and install react-colorful**
 
-## Available Scripts
+    npx create-react-app use-state-reducer-ts --template typescript
+    
+    cd use-state-reducer-ts
+    
+    npm i react-colorful
 
-In the project directory, you can run:
+    
+**Lets create the files we need**
 
-### `npm start`
+    mkdir components
+    
+    touch ./components/UseStateComponent.tsx ./components/UseReducerComponent.tsx
+    
+    touch ./components/ColorBox.tsx ./components/ColorInterface.tsx
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Lets start our project**
 
-### `npm test`
+    npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Open UseStateComponent**
 
-### `npm run build`
+    import  React, { useState } from  "react";
+    import { HexColorPicker } from  "react-colorful";
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    function  UseStateComponent() {
+    
+	    return (
+	    
+	    );
+    }
+    export  default  UseStateComponent;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Add colors states**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    const [color1, setColor1] =  useState<string>("#00000");
+    const [color2, setColor2] =  useState<string>("#00000");
+    const [color3, setColor3] =  useState<string>("#00000");
+    const [color4, setColor4] =  useState<string>("#00000");
 
-### `npm run eject`
+**Create array of colors**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    const  colors  = [
+    { title: "Color 1", color: color1, setter: setColor1 },
+    { title: "Color 2", color: color2, setter: setColor2 },
+    { title: "Color 3", color: color3, setter: setColor3 },
+    { title: "Color 4", color: color4, setter: setColor4 },
+    ];
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    return (
+    <div className="flex">
+	    {colors.map((color,index) => (
+	    <div className="flex-color-box" key={index}>
+			<ColorBox  color={color.color}  />
+		    <HexColorPicker color={color.color} onChange={color.setter}  />
+	    </div>
+    ))}
+    </div>
+    );
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Create color box component**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    import  React  from  "react";
+    function  ColorBox(props: { color:  string }) {
+    
+    return (
+	    <div  className="color-box"  style={{ backgroundColor: props.color }}>
+		    <span>{props.color}</span>
+	    </div>
+    );
+    }
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+    export  default  ColorBox;

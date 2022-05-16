@@ -126,3 +126,12 @@
 **Lets implement useReducers**
 
     const [state, dispatch] = useReducer(reducer, initialState);
+
+**Lets set our color map**
+
+    const colors = [
+        { title: "Color 1", color: state.color1, setter: "color1" },
+        { title: "Color 2", color: state.color2, setter: "color2" },
+        { title: "Color 3", color: state.color3, setter: "color3" },
+        { title: "Color 4", color: state.color4, setter: "color4" },
+    ];

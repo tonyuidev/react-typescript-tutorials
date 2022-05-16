@@ -105,3 +105,20 @@
 	    color4: "#000",
     };
 
+
+**Lets build the reducer**
+
+    function reducer(state: Colors, action: Action) {
+    switch (action.type) {
+        case "color1":
+        return { ...state, color1: action.value };
+        case "color2":
+        return { ...state, color2: action.value };
+        case "color3":
+        return { ...state, color3: action.value };
+        case "color4":
+        return { ...state, color4: action.value };
+        default:
+        throw new Error();
+    }
+    }

@@ -122,3 +122,7 @@
         throw new Error();
     }
     }
+
+**Lets implement useReducers**
+
+    const [state, dispatch] = useReducer(reducer, initialState);

@@ -3,7 +3,7 @@
 
 Written by: Tony St. Pierre
 [https://tonyux.com](https://tonyux.com)
-[https://linkedin.com/li/tonyux](https://linkedin.com/li/tonyux)
+[https://linkedin.com/li/tonyux](https://linkedin.com/in/tonyux)
 
 When building React apps the useState hook is one of the most used hooks to manage states within a functional component.
 
